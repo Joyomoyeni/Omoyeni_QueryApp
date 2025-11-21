@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Q&A System</title>
+    <style>
+        body { font-family: sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { text-align: center; color: #333; }
+        form { margin-bottom: 20px; padding: 15px; border: 1px solid #ccc; border-radius: 5px; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; }
+        textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; resize: vertical; }
+        button { padding: 10px 15px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        .result-box { margin-top: 20px; padding: 15px; background-color: #f4f4f9; border-left: 5px solid #007bff; }
+        .result-box h3 { margin-top: 0; color: #007bff; }
+        .original-q { color: #555; }
+        .processed-q { color: #888; font-style: italic; }
+        .answer { white-space: pre-wrap; background-color: white; padding: 10px; border-radius: 3px; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <h1>🤖 LLM Question-and-Answering Web GUI</h1>
+
+    <form method="POST">
+        <label for="question">Enter Your Question:</label>
+        <textarea id="question" name="question" rows="4" required>{{ question if question else '' }}</textarea>
+        <button type="submit">Get Answer</button>
+    </form>
+
+    {% if answer %}
+    <div class="result-box">
+        <h2>✅ Results</h2>
+
+        <h3>Original Question</h3>
+        <p class="original-q">{{ question }}</p>
+
+        <h3>Processed Query (View the processed question)</h3>
+        <p class="processed-q">{{ processed }}</p>
+
+        <h3>LLM API Response (See the LLM API response)</h3>
+        <div class="answer">{{ answer }}</div>
+    </div>
+    {% endif %}
+
+</body>
+</html>

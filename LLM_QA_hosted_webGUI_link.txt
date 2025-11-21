@@ -1,0 +1,4 @@
+Name: John Doe
+Matric number: S00000000
+Live URL of hosted application: https://llm-qa-system-johndoe.onrender.com
+GitHub repository link: https://github.com/johndoe/LLM_QA_Project_JohnDoe_S00000000
