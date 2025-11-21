@@ -1,3 +1,4 @@
 Flask
 google-genai # or the library for your chosen LLM
-python-dotenv # Optional, but recommended for handling environment variables locally
+python-dotenv
+gunicorn
